@@ -1,0 +1,22 @@
+# https://stackoverflow.com/questions/34597186/use-a-different-user-email-and-user-name-for-git-config-based-upon-remote-clone
+
+[includeIf "gitdir:~/.dotfiles/"]
+    path = .gitconfig-github
+[includeIf "gitdir:~/code/github/"]
+    path = .gitconfig-github
+[includeif "gitdir:~/code/gitlab.divid.se/"]
+    path = .gitconfig-gitlab.divid.se
+[includeif "gitdir:~/code/gitlab-private/"]
+    path = .gitconfig-gitlab-private
+[includeif "gitdir:~/code/git-kc/"]
+    path = .gitconfig-git-kc
+[includeif "gitdir:~/code/git-systemair/"]
+    path = .gitconfig-git-systemair
+
+# This is Git's per-user configuration file.
+[user]
+    name = Jonas Kello
+    useconfigonly = true
+[credential]
+    helper = store
+

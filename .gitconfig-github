@@ -1,0 +1,4 @@
+# This configs the commit email on github
+[user]
+    email = jonas.kello@gmail.com
+

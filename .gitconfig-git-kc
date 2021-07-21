@@ -1,0 +1,3 @@
+# This configs the commit email on gitlab.com
+[user]
+    email = jonas.kello@gmail.com
