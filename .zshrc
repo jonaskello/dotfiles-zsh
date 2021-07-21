@@ -44,7 +44,6 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
     bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
 
-
 # Functions for loading plugins and completions
 export ZDOTDIR=$HOME
 source "$ZDOTDIR/.zsh-functions"
@@ -52,7 +51,8 @@ source "$ZDOTDIR/.zsh-functions"
 # Plugins
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "romkatv/powerlevel10k"
+zsh_add_plugin "romkatv/powerlevel10k" ; source ~/plugins/powerlevel10k/powerlevel10k.zsh-theme ; [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+zsh_add_plugin "junegunn/fzf" ; [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ; [[ ! -f ~/plugins/fzf/bin/fzf ]] && ~/plugins/fzf/install
 
 # nvm config
 export NVM_DIR="$HOME/.nvm"
@@ -73,9 +73,3 @@ fi
 export KUBECONFIG=~/.kube/config:/mnt/c/Users/jonkel/Downloads/k8s-promaster-kubeconfig.yaml:~/code/github/jonaskello/k8s-kello/kube_config_cluster.yml:~/code/gitlab.divid.se/divid-it/k8s-divid/kube_config_cluster.yml:~/.kube/swegon-jonas-kello-divid-config:~/.kube/k8s-munters.yaml
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source ~/plugins/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fuzzy search history (CTRL+R)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
