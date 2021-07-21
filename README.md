@@ -20,6 +20,10 @@ dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout
 ```
 
+Add fzf
+
+https://github.com/junegunn/fzf#using-git
+
 ## References
 
 https://www.atlassian.com/git/tutorials/dotfiles
