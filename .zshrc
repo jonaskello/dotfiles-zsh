@@ -5,11 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If we don't set path explicitly then the windows PATH is added and zsh becomes slow
-# https://github.com/microsoft/WSL/issues/4256#issuecomment-586798255
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-# Add back path to vscode: https://github.com/microsoft/WSL/issues/4256#issuecomment-665941352
-export PATH='/mnt/c/Users/jonas/AppData/Local/Programs/Microsoft VS Code/bin':$PATH
+# # If we don't set path explicitly then the windows PATH is added and zsh becomes slow
+# # https://github.com/microsoft/WSL/issues/4256#issuecomment-586798255
+# export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+# # Add back path to vscode: https://github.com/microsoft/WSL/issues/4256#issuecomment-665941352
+# export PATH='/mnt/c/Users/jonkel/AppData/Local/Programs/Microsoft VS Code/bin':$PATH
 
 
 # some useful options (man zshoptions)
@@ -70,6 +70,9 @@ export NVM_DIR="$HOME/.nvm"
 alias k=kubectl
 # Alias for maintaining dotfiles in bare git repo
 alias dotfiles='/usr/bin/git --git-dir=/home/jonkel/.dotfiles/ --work-tree=/home/jonkel'
+# Alias for windows explorer
+alias explorer='explorer.exe'
+
 # kubectl autocompletion
 source <(kubectl completion zsh)
 if command -V kubectl-use >/dev/null; then
