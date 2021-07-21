@@ -5,21 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-# Lines configured by zsh-newuser-install
+# Key bindings
 bindkey -e
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-
-# Use modern completion
-autoload -Uz compinit
-compinit
-
-# nvm config
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # start typing + [Up-Arrow] - fuzzy find history forward
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
     autoload -U up-line-or-beginning-search
@@ -32,6 +21,24 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
     zle -N down-line-or-beginning-search
     bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
+
+# Use modern completion
+autoload -Uz compinit
+compinit
+
+# Functions for loading plugins and completions
+export ZDOTDIR=$HOME
+source "$ZDOTDIR/.zsh-functions"
+
+# Plugins
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+
+# nvm config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # Alias for kubectl
 alias k=kubectl
