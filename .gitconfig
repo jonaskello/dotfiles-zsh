@@ -12,6 +12,8 @@
     path = .gitconfig-git-kc
 [includeif "gitdir:~/code/git-systemair/"]
     path = .gitconfig-git-systemair
+[includeIf "gitdir:~/code/experiments/"]
+    path = .gitconfig-github
 
 # This is Git's per-user configuration file.
 [user]
