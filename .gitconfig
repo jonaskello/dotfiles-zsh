@@ -6,6 +6,8 @@
     path = .gitconfig-github
 [includeif "gitdir:~/code/gitlab.divid.se/"]
     path = .gitconfig-gitlab.divid.se
+[includeif "gitdir:~/code/gitlab-dividab/"]
+    path = .gitconfig-gitlab-dividab
 [includeif "gitdir:~/code/gitlab-private/"]
     path = .gitconfig-gitlab-private
 [includeif "gitdir:~/code/git-kc/"]
