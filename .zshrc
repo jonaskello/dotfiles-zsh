@@ -60,11 +60,9 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "romkatv/powerlevel10k" ; source ~/plugins/powerlevel10k/powerlevel10k.zsh-theme ; [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 zsh_add_plugin "junegunn/fzf" ; [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ; [[ ! -f ~/plugins/fzf/bin/fzf ]] && ~/plugins/fzf/install
-
-# nvm config
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+zsh_add_plugin "lukechilds/zsh-nvm"
 
 # Alias for kubectl
 alias k=kubectl
