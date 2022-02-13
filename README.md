@@ -5,13 +5,13 @@ Dotfiles for zsh
 
 ```zsh
 echo ".dotfiles" >> .gitignore
-git clone --bare git@github.com:jonaskello/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:jonaskello/dotfiles-zsh.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 dotfiles checkout
 ```
 
-## First time setup (not needed for new computers)
+## First time setup (only when creating the repo, not needed for new computers)
 
 ```zsh
 git init --bare $HOME/.dotfiles
