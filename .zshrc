@@ -79,5 +79,5 @@ fi
 # flux autocompletion
 command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
 # Kubernetes configs
-export KUBECONFIG=~/.kube/config:/mnt/c/Users/jonkel/Downloads/k8s-promaster-kubeconfig.yaml:~/code/github/jonaskello/k8s-kello/kube_config_cluster.yml:~/code/gitlab.divid.se/divid-it/k8s-divid/kube_config_cluster.yml:~/.kube/swegon-jonas-kello-divid-config:~/.kube/k8s-munters.yaml
+export KUBECONFIG=~/.kube/config:~/code/github/jonaskello/k8s-kello/kube_config_cluster.yml:~/code/gitlab.divid.se/divid-it/flux-system-k8s-divid/kube_config_cluster.yml:~/.kube/jonas-kello-divid.kubeconfig
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
