@@ -26,13 +26,16 @@ setopt appendhistory
 # beeping is annoying
 unsetopt BEEP
 
+# # completions
+# autoload -Uz compinit
+# zstyle ':completion:*' menu yes select
+# compinit
+# #_comp_options+=(globdots)		# Include hidden files.
+
 # completions
-autoload -Uz compinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 zstyle ':completion:*' menu yes select
-# zstyle ':completion::complete:lsof:*' menu yes select
-#zmodload zsh/complist
-compinit
-#_comp_options+=(globdots)		# Include hidden files.
 
 # Key bindings
 bindkey -e
@@ -78,6 +81,9 @@ if command -V kubectl-use >/dev/null; then
 fi
 # flux autocompletion
 command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
+# az autocompletion
+source /etc/bash_completion.d/azure-cli
+
 # Kubernetes configs
 export KUBECONFIG=~/.kube/config:~/code/github/jonaskello/k8s-kello/kube_config_cluster.yml:~/code/gitlab.divid.se/divid-it/flux-system-k8s-divid/kube_config_cluster.yml:~/.kube/jonas-kello-divid.kubeconfig
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
