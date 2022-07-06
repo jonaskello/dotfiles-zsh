@@ -35,7 +35,9 @@ unsetopt BEEP
 # completions
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-zstyle ':completion:*' menu yes select
+#zstyle ':completion:*' menu yes select
+zstyle ':completion:*' menu select=0 search
+#zstyle ':completion:*' menu select=0 interactive
 
 # Key bindings
 bindkey -e
