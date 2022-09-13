@@ -26,19 +26,6 @@ setopt appendhistory
 # beeping is annoying
 unsetopt BEEP
 
-# # completions
-# autoload -Uz compinit
-# zstyle ':completion:*' menu yes select
-# compinit
-# #_comp_options+=(globdots)		# Include hidden files.
-
-# completions
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-#zstyle ':completion:*' menu yes select
-zstyle ':completion:*' menu select=0 search
-#zstyle ':completion:*' menu select=0 interactive
-
 # Key bindings
 bindkey -e
 bindkey "^[[1;5C" forward-word
@@ -63,11 +50,25 @@ source "$ZDOTDIR/.zsh-functions"
 # Plugins
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "asdf-vm/asdf" ; source  ~/plugins/asdf/asdf.sh ; fpath=(~/plugins/asdf/completions $fpath)
 zsh_add_plugin "romkatv/powerlevel10k" ; source ~/plugins/powerlevel10k/powerlevel10k.zsh-theme ; [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 zsh_add_plugin "junegunn/fzf" ; [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ; [[ ! -f ~/plugins/fzf/bin/fzf ]] && ~/plugins/fzf/install
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 zsh_add_plugin "lukechilds/zsh-nvm"
+
+# # completions
+# autoload -Uz compinit
+# zstyle ':completion:*' menu yes select
+# compinit
+# #_comp_options+=(globdots)		# Include hidden files.
+
+# completions
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+#zstyle ':completion:*' menu yes select
+zstyle ':completion:*' menu select=0 search
+#zstyle ':completion:*' menu select=0 interactive
 
 # Alias for kubectl
 alias k=kubectl
