@@ -53,9 +53,9 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "asdf-vm/asdf" ; source  ~/plugins/asdf/asdf.sh ; fpath=(~/plugins/asdf/completions $fpath)
 zsh_add_plugin "romkatv/powerlevel10k" ; source ~/plugins/powerlevel10k/powerlevel10k.zsh-theme ; [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 zsh_add_plugin "junegunn/fzf" ; [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ; [[ ! -f ~/plugins/fzf/bin/fzf ]] && ~/plugins/fzf/install
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-zsh_add_plugin "lukechilds/zsh-nvm"
+# export NVM_LAZY_LOAD=true
+# export NVM_COMPLETION=true
+# zsh_add_plugin "lukechilds/zsh-nvm"
 
 # # completions
 # autoload -Uz compinit
