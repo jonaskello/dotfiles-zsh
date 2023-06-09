@@ -63,6 +63,17 @@ zsh_add_plugin "junegunn/fzf" ; [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ; [[ ! -f
 # compinit
 # #_comp_options+=(globdots)		# Include hidden files.
 
+# open command for wsl2
+
+# Adding wsl-open as a browser for Bash for Windows
+if [[ $(uname -r) =~ (m|M)icrosoft ]]; then
+  if [[ -z $BROWSER ]]; then
+    export BROWSER=wsl-open
+  else
+    export BROWSER=$BROWSER:wsl-open
+  fi
+fi
+
 # completions
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
