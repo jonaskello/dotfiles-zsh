@@ -87,6 +87,8 @@ alias k=kubectl
 alias dotfiles='/usr/bin/git --git-dir=/home/jonkel/.dotfiles/ --work-tree=/home/jonkel'
 # Alias for windows explorer
 alias explorer='explorer.exe'
+# Alias for pnpm
+alias p='pnpm'
 
 # kubectl autocompletion
 source <(kubectl completion zsh)
