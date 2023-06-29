@@ -68,9 +68,9 @@ zsh_add_plugin "junegunn/fzf" ; [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ; [[ ! -f
 # Adding wsl-open as a browser for Bash for Windows
 if [[ $(uname -r) =~ (m|M)icrosoft ]]; then
   if [[ -z $BROWSER ]]; then
-    export BROWSER=wsl-open
+    export BROWSER="wsl-open"
   else
-    # export BROWSER=$BROWSER:wsl-open
+    export BROWSER="${BROWSER}:wsl-open"
   fi
 fi
 
