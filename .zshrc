@@ -101,7 +101,7 @@ command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
 source /etc/bash_completion.d/azure-cli
 
 # Kubernetes configs
-export KUBECONFIG=~/.kube/config:~/code/github/jonaskello/k8s-kello/kube_config_cluster.yml:~/code/gitlab.divid.se/divid-it/flux-system-k8s-divid/kube_config_cluster.yml:~/.kube/jonas-kello-divid.kubeconfig
+export KUBECONFIG=~/.kube/config:~/code/github/jonaskello/k8s-kello/kube_config_cluster.yml:~/.kube/jonas-kello-divid.kubeconfig
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
